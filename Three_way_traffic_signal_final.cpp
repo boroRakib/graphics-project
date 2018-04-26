@@ -1,8 +1,15 @@
-///Three way traffic
-#include<iostream>
-#include <GL/glut.h>
+#include <iostream>
+#include <stdlib.h>
 #include <math.h>
-using namespace std;
+
+
+#include <GL/gl.h>
+
+#include <GL/glut.h>
+
+
+
+//Draws the 3D scene
 float _move = 0.0f;
 float _move1 = 0.0f;
 float _move2 = 0.0f;
