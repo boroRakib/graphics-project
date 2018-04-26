@@ -1,15 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
 #include <math.h>
-
-
 #include <GL/gl.h>
-
 #include <GL/glut.h>
 
 
 
-//Draws the 3D scene
+
 float _move = 0.0f;
 float _move1 = 0.0f;
 float _move2 = 0.0f;
@@ -51,6 +48,196 @@ void myDisplay(void)
     glLoadIdentity();
 
     road();
+
+    ///horizontal lone
+
+    glColor3f(1.0,1.0,1.0);
+    glBegin(GL_POLYGON);
+    glVertex2i(-640,-65);
+    glVertex2i(-300,-65);
+    glVertex2i(-300,-100);
+    glVertex2i(-640,-100);
+    glEnd();
+
+
+
+
+
+    glColor3f(0.5,1.0,0.0);
+    glBegin(GL_POLYGON);
+    glVertex2i(-635,-70);
+    glVertex2i(-305,-70);
+    glVertex2i(-305,-95);
+    glVertex2i(-635,-95);
+    glEnd();
+
+    glColor3f(0.6,0.6,0.6);
+    glBegin(GL_POLYGON);
+    glVertex2i(-300,-65);
+    glVertex2i(-295,-65);
+    glVertex2i(-295,-100);
+    glVertex2i(-300,-100);
+    glEnd();
+
+
+    ///glower bed
+    glColor3f(1.0,0.0,0.0);
+    glBegin(GL_POINTS);
+    glVertex2i(-310,-78);
+    glVertex2i(-310,-88);
+
+    glVertex2i(-320,-78);
+    glVertex2i(-320,-88);
+
+    glVertex2i(-330,-78);
+    glVertex2i(-330,-88);
+    glVertex2i(-340,-78);
+    glVertex2i(-340,-88);
+    glVertex2i(-350,-78);
+    glVertex2i(-350,-88);
+    glVertex2i(-360,-78);
+    glVertex2i(-360,-88);
+    glVertex2i(-370,-78);
+    glVertex2i(-370,-88);
+    glVertex2i(-380,-78);
+    glVertex2i(-380,-88);
+
+    glVertex2i(-390,-78);
+    glVertex2i(-390,-88);
+    glVertex2i(-400,-78);
+    glVertex2i(-400,-88);
+
+    glVertex2i(-410,-78);
+    glVertex2i(-410,-88);
+
+    glVertex2i(-420,-78);
+    glVertex2i(-420,-88);
+
+    glVertex2i(-430,-78);
+    glVertex2i(-430,-88);
+
+    glVertex2i(-440,-78);
+    glVertex2i(-440,-88);
+
+    glVertex2i(-450,-78);
+    glVertex2i(-450,-88);
+
+    glVertex2i(-460,-78);
+    glVertex2i(-460,-88);
+
+    glVertex2i(-470,-78);
+    glVertex2i(-470,-88);
+
+    glVertex2i(-480,-78);
+    glVertex2i(-480,-88);
+    glVertex2i(-490,-78);
+    glVertex2i(-490,-88);
+    glVertex2i(-500,-78);
+    glVertex2i(-500,-88);
+    glVertex2i(-510,-78);
+    glVertex2i(-510,-88);
+    glVertex2i(-520,-78);
+    glVertex2i(-520,-88);
+    glVertex2i(-530,-78);
+    glVertex2i(-530,-88);
+    glVertex2i(-540,-78);
+    glVertex2i(-540,-88);
+    glVertex2i(-550,-78);
+    glVertex2i(-550,-88);
+    glVertex2i(-560,-78);
+    glVertex2i(-560,-88);
+    glVertex2i(-570,-78);
+    glVertex2i(-570,-88);
+    glVertex2i(-580,-78);
+    glVertex2i(-580,-88);
+    glVertex2i(-590,-78);
+    glVertex2i(-590,-88);
+
+    glVertex2i(-600,-78);
+    glVertex2i(-600,-88);
+    glVertex2i(-610,-78);
+    glVertex2i(-610,-88);
+    glVertex2i(-620,-78);
+    glVertex2i(-620,-88);
+    glVertex2i(-630,-78);
+    glVertex2i(-630,-88);
+
+
+
+    glEnd();
+
+    ///vertical lone
+
+    glColor3f(1.0,1.0,1.0);
+    glBegin(GL_QUADS);
+    glVertex2i(-145,-360);
+    glVertex2i(-110,-360);
+    glVertex2i(-110,-150);
+    glVertex2i(-145,-150);
+
+    glColor3f(0.5,1.0,0.0);
+    glVertex2i(-140,-355);
+    glVertex2i(-115,-355);
+    glVertex2i(-115,-155);
+    glVertex2i(-140,-155);
+
+    glColor3f(0.6,0.6,0.6);
+
+    glVertex2i(-110,-360);
+    glVertex2i(-105,-360);
+    glVertex2i(-105,-150);
+    glVertex2i(-110,-150);
+
+
+
+
+
+    glEnd();
+
+    ///glower bed 2
+    glColor3f(1.0,0.0,0.0);
+    glBegin(GL_POINTS);
+    glVertex2i(-133,-160);
+    glVertex2i(-123,-160);
+    glVertex2i(-133,-170);
+    glVertex2i(-123,-170);
+    glVertex2i(-133,-180);
+    glVertex2i(-123,-180);
+    glVertex2i(-133,-190);
+    glVertex2i(-123,-190);
+    glVertex2i(-133,-200);
+    glVertex2i(-123,-200);
+    glVertex2i(-133,-210);
+    glVertex2i(-123,-210);
+    glVertex2i(-133,-220);
+    glVertex2i(-123,-220);
+    glVertex2i(-133,-230);
+    glVertex2i(-123,-230);
+    glVertex2i(-133,-240);
+    glVertex2i(-123,-240);
+    glVertex2i(-133,-250);
+    glVertex2i(-123,-250);
+    glVertex2i(-133,-260);
+    glVertex2i(-123,-260);
+    glVertex2i(-133,-270);
+    glVertex2i(-123,-270);
+    glVertex2i(-133,-280);
+    glVertex2i(-123,-280);
+    glVertex2i(-133,-290);
+    glVertex2i(-123,-290);
+    glVertex2i(-133,-300);
+    glVertex2i(-123,-300);
+    glVertex2i(-133,-310);
+    glVertex2i(-123,-310);
+    glVertex2i(-133,-320);
+    glVertex2i(-123,-320);
+    glVertex2i(-133,-330);
+    glVertex2i(-123,-330);
+    glVertex2i(-133,-340);
+    glVertex2i(-123,-340);
+    glVertex2i(-133,-350);
+    glVertex2i(-123,-350);
+    glEnd();
 
     ///left building
 
@@ -139,7 +326,7 @@ void myDisplay(void)
     glEnd();
 
 
-     glBegin(GL_POLYGON);
+    glBegin(GL_POLYGON);
     glColor3f(0.6,0.6,0.6);
     glVertex2i(-395,-295);
     glVertex2i(-395,-270);
@@ -831,6 +1018,96 @@ void road()
     glVertex2f(206,-60);
     glVertex2f(206,87);
     glEnd();
+
+
+///zebra crossing
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,1.0);
+
+    glVertex2f(-275,-50);
+    glVertex2f(-275,-50);
+    glVertex2f(-175,-40);
+    glVertex2f(-175,-50);
+
+
+
+    glVertex2f(-275,-40);
+    glVertex2f(-275,-30);
+    glVertex2f(-175,-20);
+    glVertex2f(-175,-30);
+
+    glVertex2f(-275,-20);
+    glVertex2f(-275,-10);
+    glVertex2f(-175,0);
+    glVertex2f(-175,-10);
+
+    glVertex2f(-275,0);
+    glVertex2f(-275,10);
+    glVertex2f(-175,20);
+    glVertex2f(-175,10);
+
+    glVertex2f(-275,20);
+    glVertex2f(-275,30);
+    glVertex2f(-175,40);
+    glVertex2f(-175,30);
+
+    glVertex2f(-275,40);
+    glVertex2f(-275,50);
+    glVertex2f(-175,60);
+    glVertex2f(-175,50);
+
+    glVertex2f(-275,60);
+    glVertex2f(-275,70);
+    glVertex2f(-175,80);
+    glVertex2f(-175,70);
+
+    glVertex2f(-275,80);
+    glVertex2f(-275,90);
+    glVertex2f(-175,100);
+    glVertex2f(-175,90);
+
+
+    glVertex2f(-275,100);
+    glVertex2f(-275,110);
+    glVertex2f(-175,120);
+    glVertex2f(-175,110);
+
+    glVertex2f(-275,120);
+    glVertex2f(-275,130);
+    glVertex2f(-175,140);
+    glVertex2f(-175,130);
+
+    glVertex2f(-275,140);
+    glVertex2f(-275,150);
+    glVertex2f(-175,160);
+    glVertex2f(-175,150);
+
+    glVertex2f(-275,160);
+    glVertex2f(-275,170);
+    glVertex2f(-175,180);
+    glVertex2f(-175,170);
+
+    glVertex2f(-275,180);
+    glVertex2f(-275,190);
+    glVertex2f(-175,200);
+    glVertex2f(-175,190);
+
+    glVertex2f(-275,200);
+    glVertex2f(-275,210);
+    glVertex2f(-175,220);
+    glVertex2f(-175,210);
+
+    glVertex2f(-275,220);
+    glVertex2f(-275,230);
+    glVertex2f(-175,230);
+    glVertex2f(-175,230);
+
+
+
+
+
+
+    glEnd();
 }
 void myInit (void)
 {
@@ -842,10 +1119,12 @@ void myInit (void)
     gluOrtho2D(-640.0, 640.0, -360.0, 360.0);
 }
 
-void keyboard(unsigned char key, int x, int y) {
-   switch (key) {
-      case 27:     // ESC key
-         exit(0);
-         break;
-   }
+void keyboard(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+    case 27:     // ESC key
+        exit(0);
+        break;
+    }
 }
