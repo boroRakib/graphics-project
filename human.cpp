@@ -14,67 +14,15 @@ void drawCircle(void)
         glVertex2i(12.0f,20.0f);
         glVertex2i(3.0f,20.0f);
 
-       ///left leg
-        glVertex2i(-3.0f,5.0f);
-        glVertex2i(-12.0f,5.0f);
-        glVertex2i(-12.0f,20.0f);
-        glVertex2i(-3.0f,20.0f);
+     glColor3f(1.0, 1.0, 0.0);
+     glVertex2i(-6.0f,60.0f);
+      glVertex2i(18.0f,60.0f);
+       glVertex2i(12.0f,5.0f);
+        glVertex2i(3.0f,5.0f);
 
     glEnd();
 
 
-    glColor3f(0.0, 0.0, 0.0);
-
-    ///head
-    int x=0,y=15;
-    int d=1-y;
-    while(y>x)
-    {
-        if(d>=0)
-        {
-            d+=2*x-2*y+5;
-            y-=1;
-
-        }
-        else
-        {
-            d+=2*x+3;
-        }
-
-        x+=1;
-
-        glBegin(GL_POLYGON);
-        glVertex2i(x,y);
-        glVertex2i(-x,-y);
-        glVertex2i(-x,y);
-        glVertex2i(x,-y);
-        glVertex2i(y,x);
-        glVertex2i(-y,-x);
-        glVertex2i(-y,x);
-        glVertex2i(y,-x);
-        glVertex2i(-x,-y);
-
-
-        glEnd();
-
-
-
-    }
-
-     glColor3f(1.0, 1.0, 0.0);///right hand
-        glBegin(GL_QUADS);
-        glVertex2i(15.0f,-6.0f);
-        glVertex2i(25.0f,-6.0f);
-        glVertex2i(25.0f,6.0f);
-        glVertex2i(15.0f,6.0f);
-
-        glVertex2i(-15.0f,-6.0f);///left hand
-        glVertex2i(-25.0f,-6.0f);
-        glVertex2i(-25.0f,6.0f);
-        glVertex2i(-15.0f,6.0f);
-
-
-    glEnd();
 
     glFlush ();
 

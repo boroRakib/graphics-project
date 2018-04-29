@@ -847,8 +847,10 @@ void car(float x,float y,float z)
 }
 void road()
 {
+    if(night==1)
+    {
 
-    glColor3f(26/255.0, 26/255.0,26/255.0);
+        glColor3f(26/255.0, 26/255.0,26/255.0);
 
 ///main Road
     glBegin(GL_POLYGON);
@@ -861,6 +863,228 @@ void road()
     glVertex2f(-100,-360);
     glVertex2f(200,-360);
     glEnd();
+
+
+
+
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(-600,250);
+        glVertex2f(-590,250);
+        glVertex2f(-590,260);
+        glVertex2f(-600,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-620,230);
+        glVertex2f(-570,230);
+        glVertex2f(-590,250);
+        glVertex2f(-600,250);
+
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(-500,250);
+        glVertex2f(-490,250);
+        glVertex2f(-490,260);
+        glVertex2f(-500,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-520,230);
+        glVertex2f(-470,230);
+        glVertex2f(-490,250);
+        glVertex2f(-500,250);
+
+
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(-400,250);
+        glVertex2f(-390,250);
+        glVertex2f(-390,260);
+        glVertex2f(-400,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-420,230);
+        glVertex2f(-370,230);
+        glVertex2f(-390,250);
+        glVertex2f(-400,250);
+
+
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(-300,250);
+        glVertex2f(-290,250);
+        glVertex2f(-290,260);
+        glVertex2f(-300,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-320,230);
+        glVertex2f(-270,230);
+        glVertex2f(-290,250);
+        glVertex2f(-300,250);
+
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(-200,250);
+        glVertex2f(-190,250);
+        glVertex2f(-190,260);
+        glVertex2f(-200,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-220,230);
+        glVertex2f(-170,230);
+        glVertex2f(-190,250);
+        glVertex2f(-200,250);
+
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(-100,250);
+        glVertex2f(-90,250);
+        glVertex2f(-90,260);
+        glVertex2f(-100,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-120,230);
+        glVertex2f(-70,230);
+        glVertex2f(-90,250);
+        glVertex2f(-100,250);
+
+
+         glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(0,250);
+        glVertex2f(10,250);
+        glVertex2f(10,260);
+        glVertex2f(0,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(-20,230);
+        glVertex2f(30,230);
+        glVertex2f(10,250);
+        glVertex2f(0,250);
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(100,250);
+        glVertex2f(110,250);
+        glVertex2f(110,260);
+        glVertex2f(100,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(80,230);
+        glVertex2f(130,230);
+        glVertex2f(110,250);
+        glVertex2f(100,250);
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(200,250);
+        glVertex2f(210,250);
+        glVertex2f(210,260);
+        glVertex2f(200,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(180,230);
+        glVertex2f(230,230);
+        glVertex2f(210,250);
+        glVertex2f(200,250);
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(300,250);
+        glVertex2f(310,250);
+        glVertex2f(310,260);
+        glVertex2f(300,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(280,230);
+        glVertex2f(330,230);
+        glVertex2f(310,250);
+        glVertex2f(300,250);
+
+
+         glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(400,250);
+        glVertex2f(410,250);
+        glVertex2f(410,260);
+        glVertex2f(400,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(380,230);
+        glVertex2f(430,230);
+        glVertex2f(410,250);
+        glVertex2f(400,250);
+
+
+
+         glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(500,250);
+        glVertex2f(510,250);
+        glVertex2f(510,260);
+        glVertex2f(500,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(480,230);
+        glVertex2f(530,230);
+        glVertex2f(510,250);
+        glVertex2f(500,250);
+
+        glColor3f(0.0, 0.0,1.0);
+        glBegin(GL_QUADS);
+///light source
+        glVertex2f(600,250);
+        glVertex2f(610,250);
+        glVertex2f(610,260);
+        glVertex2f(600,260);
+///light
+        glColor3f(1.0, 1.0,0.0);
+        glVertex2f(580,230);
+        glVertex2f(630,230);
+        glVertex2f(610,250);
+        glVertex2f(600,250);
+
+
+    glEnd();
+
+    }
+
+
+    else{
+             glColor3f(26/255.0, 26/255.0,26/255.0);
+
+///main Road
+    glBegin(GL_POLYGON);
+    glVertex2f(200,-60);
+    glVertex2f(640,-60);
+    glVertex2f(640,240);
+    glVertex2f(-640,240);
+    glVertex2f(-640,-60);
+    glVertex2f(-100,-60);
+    glVertex2f(-100,-360);
+    glVertex2f(200,-360);
+    glEnd();
+
+    }
+
+
 
 ///white stripes
     glBegin(GL_POLYGON);
