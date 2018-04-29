@@ -3,7 +3,7 @@
 #include <math.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
-
+using namespace std;
 
 
 
@@ -17,7 +17,7 @@ int tG1=300,tG2=300,tG3=300;
 int tY1=40,tY2=40,tY3=40;
 int round1=1;
 int r1=0,g1=1,r2=0,g2=1,r3=1,g3=1;///For color choosing
-
+int stop=0;
 void myInit (void);
 void traffic_signal(float x,float y,float z);
 void circle(float x,float y,float z);
@@ -27,17 +27,34 @@ void car1();
 void update(int value);
 void car(float x,float y,float z);
 void keyboard(unsigned char key, int x, int y);
+int night=0;
+int day=0;
+void nightMode()
+{
+    if(night==1)
+    {
+         glClearColor(0.0, 0.0, 0.0, 0.0);
+         day=0;
+    }
+}
+void dayMode()
+{
+    if(day==1)
+    {
+         glClearColor(0.0, 136/255.0, 34/255.0, 0.0);
+         night=0;
+    }
+}
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize (1280, 720);
-    glutInitWindowPosition (00, 0);
+    glutInitWindowPosition (0, 0);
     glutCreateWindow ("Three Way Traffic Control System");
     glutDisplayFunc(myDisplay);
     glutKeyboardFunc(keyboard);
     glutTimerFunc(20, update, 0);
-//    glutFullScreen();
     myInit ();
     glutMainLoop();
 }
@@ -415,6 +432,11 @@ void myDisplay(void)
     }
 
     traffic_signal(r1,g1,0);
+     ///stop
+    if(stop==1)
+    {
+        traffic_signal(1.0,0,0);
+    }
     glPopMatrix();
 
     ///2nd traffic signal
@@ -451,6 +473,11 @@ void myDisplay(void)
         }
     }
     traffic_signal(r2,g2,0);
+     ///stop
+    if(stop==1)
+    {
+        traffic_signal(1.0,0,0);
+    }
     glPopMatrix();
     ///3rd traffic signal
     glPushMatrix();
@@ -484,6 +511,11 @@ void myDisplay(void)
         }
     }
     traffic_signal(r3,g3,0);
+     ///stop
+    if(stop==1)
+    {
+        traffic_signal(1.0,0,0);
+    }
     glPopMatrix();
 
 
@@ -496,20 +528,9 @@ void myDisplay(void)
 void update(int value)
 {
 
-    //_move1 += 5;
+    ///1st car move functionality
     if(r1==1)
     {
-//        if(g1==1 && tY1!=0)
-//        {
-//            if(_move<=240)
-//            {
-//
-//                _move += 5;
-//
-//            }
-////            else
-//        }
-//        else
         {
             if(_move<=200 )
             {
@@ -525,17 +546,15 @@ void update(int value)
     {
         _move =-640.0;
     }
+    ///stop
+    if(stop==1)
+    {
+         _move =0.0;
+    }
     ///2nd car move functionality
     if(r2==1)
     {
-//        if(g2==1 && tY2!=0)
-//        {
-//            if(_move1<=340)
-//            {
-//                _move1 += 5;
-//            }
-//        }
-//        else
+
         {
             if(_move1<=300)
             {
@@ -552,18 +571,17 @@ void update(int value)
     {
         _move1 =-640;
     }
+     ///stop
+    if(stop==1)
+    {
+         _move1 =0.0;
+
+    }
 
     ///3rd Move functionality
     if(r3==1)
     {
-//        if(g3==1 && tY3!=0)
-//        {
-//            if(_move2<=380)
-//            {
-//                _move2 += 5;
-//            }
-//        }
-//        else
+
         {
             if(_move2<=340)
             {
@@ -582,9 +600,15 @@ void update(int value)
         _angle=90;
         Y_trans=-60;
     }
-    glutPostRedisplay(); //Notify GLUT that the display has changed
+     ///stop
+    if(stop==1)
+    {
+         _move2 =200.0;
 
-    glutTimerFunc(20, update, 0); //Notify GLUT to call update again in 20 milliseconds
+    }
+    glutPostRedisplay(); ///Notify GLUT that the display has changed
+
+    glutTimerFunc(20, update, 0); ///Notify GLUT to call update again in 20 milliseconds
 }
 void traffic_signal(float x,float y,float z)
 {
@@ -823,10 +847,10 @@ void car(float x,float y,float z)
 }
 void road()
 {
-    //road
-    glColor3f(26/255.0, 26/255.0,26/255.0);
-//    glColor3f(0.0,0.0,0.0);
 
+    glColor3f(26/255.0, 26/255.0,26/255.0);
+
+///main Road
     glBegin(GL_POLYGON);
     glVertex2f(200,-60);
     glVertex2f(640,-60);
@@ -838,7 +862,7 @@ void road()
     glVertex2f(200,-360);
     glEnd();
 
-    //glScalef(1.0,0.5,0);
+///white stripes
     glBegin(GL_POLYGON);
     glColor3f(1.0,1.0,1.0);
     glVertex2f(-600,87);
@@ -848,7 +872,7 @@ void road()
     glEnd();
 
     glBegin(GL_POLYGON);
-//    glColor3f(1.0,1.0,1.0);
+
     glVertex2f(-520,87);
     glVertex2f(-480,87);
     glVertex2f(-480,93);
@@ -856,7 +880,7 @@ void road()
     glEnd();
 
     glBegin(GL_POLYGON);
-//    glColor3f(1.0,1.0,1.0);
+
     glVertex2f(-440,87);
     glVertex2f(-400,87);
     glVertex2f(-400,93);
@@ -864,31 +888,17 @@ void road()
     glEnd();
 
     glBegin(GL_POLYGON);
-//    glColor3f(1.0,1.0,1.0);
+
     glVertex2f(-360,87);
     glVertex2f(-320,87);
     glVertex2f(-320,93);
     glVertex2f(-360,93);
     glEnd();
 
-    glBegin(GL_POLYGON);
-//    glColor3f(1.0,1.0,1.0);
-    glVertex2f(-280,87);
-    glVertex2f(-240,87);
-    glVertex2f(-240,93);
-    glVertex2f(-280,93);
-    glEnd();
+
 
     glBegin(GL_POLYGON);
-//    glColor3f(1.0,1.0,1.0);
-    glVertex2f(-200,87);
-    glVertex2f(-160,87);
-    glVertex2f(-160,93);
-    glVertex2f(-200,93);
-    glEnd();
 
-    glBegin(GL_POLYGON);
-//    glColor3f(1.0,1.0,1.0);
     glVertex2f(-120,87);
     glVertex2f(-80,87);
     glVertex2f(-80,93);
@@ -958,7 +968,7 @@ void road()
     glVertex2f(600,93);
     glEnd();
 
-    ///road downside
+    ///White stripe downside
     glBegin(GL_POLYGON);
     glVertex2f(53,-60);
     glVertex2f(47,-60);
@@ -1003,12 +1013,6 @@ void road()
     glVertex2f(-106,93);
     glVertex2f(-106,240);
     glEnd();
-//    glBegin(GL_POLYGON);
-//    glVertex2f(-112,240);
-//    glVertex2f(-112,93);
-//    glVertex2f(-118,93);
-//    glVertex2f(-118,240);
-//    glEnd();
 
 
     ///Stop Line Right site
@@ -1119,6 +1123,7 @@ void myInit (void)
     gluOrtho2D(-640.0, 640.0, -360.0, 360.0);
 }
 
+
 void keyboard(unsigned char key, int x, int y)
 {
     switch (key)
@@ -1126,5 +1131,21 @@ void keyboard(unsigned char key, int x, int y)
     case 27:     // ESC key
         exit(0);
         break;
+     case '1':
+        stop++;
+        cout<<stop;
+        break;
+        case '2':
+            night++;
+        nightMode();
+
+        break;
+        case '3':
+            day++;
+        dayMode();
+
+        break;
+
+
     }
 }
